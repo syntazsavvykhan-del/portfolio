@@ -822,8 +822,8 @@
         }
 
         .project-img.p1 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                              url('https://images.unsplash.com/photo-1614064641935-4475e832962a?auto=format&fit=crop&q=80&w=800');
+            background-image: linear-gradient(rgba(5, 5, 16, 0.2), rgba(5, 5, 16, 0.4)), 
+                              url('p1_thumb.png');
             background-size: cover;
             background-position: center;
         }
@@ -843,10 +843,20 @@
         }
 
         .project-img.p4 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                              url('https://images.unsplash.com/photo-1551288049-bbbda536ad39?auto=format&fit=crop&q=80&w=800');
+            background-image: linear-gradient(rgba(5, 5, 16, 0.1), rgba(5, 5, 16, 0.4)), 
+                              url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800');
             background-size: cover;
             background-position: center;
+            position: relative;
+        }
+        
+        .project-img.p4::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: repeating-linear-gradient(rgba(0, 245, 255, 0.03) 0, rgba(0, 245, 255, 0.03) 1px, transparent 1px, transparent 2px);
+            pointer-events: none;
+            z-index: 1;
         }
 
         .project-img.p5 {
@@ -1161,7 +1171,7 @@
                 <div class="orbit orbit-2"></div>
                 <div class="orbit orbit-3"></div>
                 <div class="avatar interactive" title="Qutub Khan">
-                    <img src="profile_tree.jpg" alt="Qutub Khan" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; scale: 1.1;">
+                    <img src="profile_main.jpg" alt="Qutub Khan" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%; scale: 1.1;">
                 </div>
             </div>
 
@@ -1190,7 +1200,7 @@
         <div class="container about-grid">
             <div class="about-img-card float-med delay-1 reveal">
                 <div class="img-wrapper">
-                    <img src="profile_tree.jpg" alt="Qutub Khan" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
+                    <img src="profile_main.jpg" alt="Qutub Khan" style="width: 100%; height: 100%; object-fit: cover; object-position: center 25%;">
                 </div>
                 <div class="about-card-info">
                     <span class="name">Qutub Khan</span>
@@ -1230,13 +1240,19 @@
                 <div class="timeline glass-card reveal">
                     <div class="timeline-item">
                         <div class="timeline-date">Completed</div>
-                        <div class="timeline-title">High Schooling</div>
+                        <div class="timeline-title">Schooling</div>
                         <div class="timeline-subtitle">Kendriya Vidyalaya</div>
+                        <div style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">
+                            10th Board: <strong>90%</strong> · 12th Board (PCMB): <strong>63%</strong>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">2025 - 2029</div>
                         <div class="timeline-title">B.Tech in CSE (AI & ML)</div>
                         <div class="timeline-subtitle">Manav Rachna University</div>
+                        <div style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">
+                            Semester 1 SGPA: <strong>7.71/10</strong>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <div class="timeline-date">Ongoing</div>
