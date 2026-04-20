@@ -407,17 +407,38 @@
         .avatar {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, var(--violet), var(--cyan));
+            background: linear-gradient(135deg, #00f5ff, #a78bfa);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-family: var(--font-head);
             font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--bg-dark);
+            font-weight: 900;
+            color: #050510;
             z-index: 2;
-            box-shadow: var(--violet-glow);
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: rotate(45deg);
+            animation: shine 4s infinite;
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 100%; }
+            100% { left: 100%; }
         }
 
         .orbit {
@@ -1139,8 +1160,8 @@
                 <div class="orbit orbit-1"></div>
                 <div class="orbit orbit-2"></div>
                 <div class="orbit orbit-3"></div>
-                <div class="avatar interactive" style="overflow: hidden; display: flex; align-items: center; justify-content: center;">
-                    <img src="profile.png" alt="Qutub Khan" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size: 2rem; font-weight: 900; color: #050510; \'>QK</span>'; this.parentElement.style.background='linear-gradient(135deg, var(--violet), var(--cyan))'">
+                <div class="avatar interactive" title="Qutub Khan">
+                    <img src="profile_tree.jpg" alt="Qutub Khan" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; scale: 1.1;">
                 </div>
             </div>
 
@@ -1169,7 +1190,7 @@
         <div class="container about-grid">
             <div class="about-img-card float-med delay-1 reveal">
                 <div class="img-wrapper">
-                    <img src="profile.png" alt="Qutub Khan" style="object-position: center 20%;" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800'; this.style.opacity='0.7';">
+                    <img src="profile_tree.jpg" alt="Qutub Khan" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%;">
                 </div>
                 <div class="about-card-info">
                     <span class="name">Qutub Khan</span>
